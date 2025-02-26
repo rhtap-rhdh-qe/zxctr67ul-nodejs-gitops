@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: zxctr67ul-nodejs-gitops
+  description: This is GitOps manifest for zxctr67ul-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=zxctr67ul-nodejs
+    backstage.io/kubernetes-id: zxctr67ul-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: zxctr67ul-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:zxctr67ul-nodejs
